@@ -1,5 +1,5 @@
 # Use Node.js 16 slim as the base image
-FROM node:18-alpine
+FROM node:16-slim
 
 # Set the working directory
 WORKDIR /app
@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci
+RUN npm install
 
 # Copy the rest of the application code
 COPY . .
